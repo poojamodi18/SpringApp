@@ -11,6 +11,10 @@ public class AnnotationApp {
         System.out.println(coach.getDailyWorkout());
         System.out.println(coach.getDailyTips());
 
+        //Bean scope
+        Coach coach1 = context.getBean("tennisCoach",Coach.class);
+        System.out.println((coach==coach1));
+
         context.close();
     }
 }

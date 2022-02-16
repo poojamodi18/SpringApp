@@ -7,6 +7,6 @@ public class GeneralTips implements Tips{
 
     @Override
     public String getTips() {
-        return "Use great racket";
+        return "Focus on breathing pattern";
     }
 }

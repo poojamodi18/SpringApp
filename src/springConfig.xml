@@ -7,6 +7,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:sports.properties"/>
+
     <bean id="fortune" class="com.springapp.HappyFortuneService"/>
 
     <bean id="BaseBall" class="com.springapp.BaseballCoach">
@@ -14,6 +16,12 @@
     </bean>
     <bean id="TrackCoach" class="com.springapp.TrackCoach">
         <constructor-arg ref="fortune"/>
+    </bean>
+
+    <bean id="cricketCoach" class="com.springapp.CricketCoach">
+        <property name="fortuneService" ref="fortune"/>
+        <property name="email" value="${foo.email}"/>
+        <property name="team" value="${foo.team}"/>
     </bean>
 
 </beans>
